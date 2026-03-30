@@ -1,0 +1,10 @@
+<%- include('partials/head', { pageTitle }) %>
+<main class="simple-page">
+  <div class="panel centered-panel">
+    <h1>Something went wrong</h1>
+    <p>The server encountered an unexpected error.</p>
+    <% if (details) { %><pre><%= details %></pre><% } %>
+    <a href="/" class="button primary">Go Home</a>
+  </div>
+</main>
+<%- include('partials/footer') %>

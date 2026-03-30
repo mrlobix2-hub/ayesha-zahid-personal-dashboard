@@ -1,0 +1,34 @@
+<%- include('partials/head', { pageTitle }) %>
+<%- include('partials/navbar') %>
+<main class="container section-gap">
+  <%- include('partials/flash') %>
+  <section class="panel form-panel">
+    <div class="panel-header">
+      <div>
+        <span class="tag">New Project</span>
+        <h1>Create a New Personal Project</h1>
+        <p>Upload one face image and one driving video. The app stores the result in project history.</p>
+      </div>
+    </div>
+
+    <form action="/projects" method="POST" enctype="multipart/form-data" class="stacked-form">
+      <label>Project Name</label>
+      <input type="text" name="projectName" placeholder="Birthday video test" required />
+
+      <label>Source Image (JPG, PNG, WEBP)</label>
+      <input type="file" name="sourceImage" accept="image/png,image/jpeg,image/webp" required />
+
+      <label>Driving Video (MP4, MOV, WEBM)</label>
+      <input type="file" name="drivingVideo" accept="video/mp4,video/quicktime,video/webm" required />
+
+      <label>Notes</label>
+      <textarea name="notes" rows="4" placeholder="Optional notes about this project"></textarea>
+
+      <div class="button-row">
+        <a href="/dashboard" class="button secondary">Cancel</a>
+        <button type="submit" class="button primary">Save Project</button>
+      </div>
+    </form>
+  </section>
+</main>
+<%- include('partials/footer') %>

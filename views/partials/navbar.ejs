@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/dashboard"><%= appTitle %></a>
+    <% if (currentUser) { %>
+      <nav class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/projects/new">New Project</a>
+        <a href="/profile">Profile</a>
+        <form action="/logout" method="POST">
+          <button type="submit" class="link-button">Logout</button>
+        </form>
+      </nav>
+    <% } %>
+  </div>
+</header>

@@ -1,0 +1,29 @@
+<%- include('partials/head', { pageTitle }) %>
+<main class="auth-page">
+  <section class="auth-card">
+    <div class="auth-copy">
+      <span class="tag">Private Website</span>
+      <h1>Ayesha Zahid Personal Dashboard</h1>
+      <p>Secure personal media workspace with login, uploads, project history, and result management.</p>
+      <ul>
+        <li>Single private account</li>
+        <li>Responsive dashboard</li>
+        <li>Image + video upload workflow</li>
+        <li>Railway and GitHub ready</li>
+      </ul>
+    </div>
+    <div class="auth-form-panel">
+      <%- include('partials/flash') %>
+      <form action="/login" method="POST" class="form-card">
+        <h2>Sign In</h2>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="ayesha@example.com" required />
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter password" required />
+        <button type="submit" class="button primary">Login</button>
+      </form>
+      <p class="helper-text">Set your own email and password inside the <code>.env</code> file before first run.</p>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

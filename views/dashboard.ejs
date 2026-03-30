@@ -1,0 +1,59 @@
+<%- include('partials/head', { pageTitle }) %>
+<%- include('partials/navbar') %>
+<main class="container section-gap">
+  <%- include('partials/flash') %>
+  <section class="hero-card">
+    <div>
+      <span class="tag">Welcome</span>
+      <h1>Hello, <%= currentUser.name %></h1>
+      <p>Your private personal dashboard for uploads, generated projects, download history, and account security.</p>
+    </div>
+    <a href="/projects/new" class="button primary">Create New Project</a>
+  </section>
+
+  <section class="stats-grid">
+    <div class="stat-card"><span>Total Projects</span><strong><%= stats.totalProjects %></strong></div>
+    <div class="stat-card"><span>Completed</span><strong><%= stats.completedProjects %></strong></div>
+    <div class="stat-card"><span>Pending</span><strong><%= stats.pendingProjects %></strong></div>
+  </section>
+
+  <section class="content-grid">
+    <div class="panel">
+      <div class="panel-header">
+        <h2>Recent Projects</h2>
+      </div>
+      <% if (!projects.length) { %>
+        <div class="empty-state">
+          <p>No projects yet. Start by uploading one source image and one driving video.</p>
+          <a href="/projects/new" class="button secondary">Start Now</a>
+        </div>
+      <% } else { %>
+        <div class="project-list">
+          <% projects.forEach((project) => { %>
+            <article class="project-card">
+              <div>
+                <h3><a href="/projects/<%= project.id %>"><%= project.projectName %></a></h3>
+                <p><%= project.notes || 'No notes added.' %></p>
+                <small><%= new Date(project.createdAt).toLocaleString() %></small>
+              </div>
+              <span class="status-pill"><%= project.status %></span>
+            </article>
+          <% }) %>
+        </div>
+      <% } %>
+    </div>
+
+    <aside class="panel sidebar-panel">
+      <h2>Main Features</h2>
+      <ul class="feature-list">
+        <li>Secure login for one private account</li>
+        <li>Upload source image</li>
+        <li>Upload driving video</li>
+        <li>Save result in history</li>
+        <li>Delete old projects</li>
+        <li>Change password anytime</li>
+      </ul>
+    </aside>
+  </section>
+</main>
+<%- include('partials/footer') %>

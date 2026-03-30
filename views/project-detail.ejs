@@ -1,0 +1,36 @@
+<%- include('partials/head', { pageTitle }) %>
+<%- include('partials/navbar') %>
+<main class="container section-gap">
+  <%- include('partials/flash') %>
+  <section class="hero-card detail-header">
+    <div>
+      <span class="tag">Project Detail</span>
+      <h1><%= project.projectName %></h1>
+      <p><%= project.notes || 'No notes added for this project.' %></p>
+    </div>
+    <form action="/projects/<%= project.id %>/delete" method="POST" onsubmit="return confirm('Delete this project?');">
+      <button type="submit" class="button danger">Delete Project</button>
+    </form>
+  </section>
+
+  <section class="media-grid">
+    <article class="panel">
+      <h2>Source Image</h2>
+      <img src="<%= project.sourceImageUrl %>" alt="Source image" class="preview-image" />
+    </article>
+    <article class="panel">
+      <h2>Driving Video</h2>
+      <video controls class="preview-video">
+        <source src="<%= project.drivingVideoUrl %>" />
+      </video>
+    </article>
+    <article class="panel">
+      <h2>Saved Result</h2>
+      <video controls class="preview-video">
+        <source src="<%= project.outputVideoUrl %>" />
+      </video>
+      <a class="button primary top-gap" href="<%= project.outputVideoUrl %>" download>Download Result</a>
+    </article>
+  </section>
+</main>
+<%- include('partials/footer') %>

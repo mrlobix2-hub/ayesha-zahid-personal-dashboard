@@ -1,0 +1,31 @@
+RAILWAY / GITHUB DEPLOYMENT FIELDS
+
+1) Repository Name
+ayesha-zahid-personal-dashboard
+
+2) Project Name
+Ayesha Zahid Personal Dashboard
+
+3) Description
+Private personal-use media dashboard for Ayesha Zahid with secure login, upload management, project history, and downloadable results.
+
+4) Environment Variables
+PORT=3000
+NODE_ENV=production
+SESSION_SECRET=change-this-to-a-long-random-secret
+ADMIN_NAME=Ayesha Zahid
+ADMIN_EMAIL=ayesha@example.com
+ADMIN_PASSWORD=ChangeThisPassword123!
+APP_TITLE=Ayesha Zahid Personal Dashboard
+
+5) Build Command
+npm install
+
+6) Start Command
+npm start
+
+7) Root Directory
+Leave blank
+
+8) Node Version
+20+

@@ -1,0 +1,28 @@
+<%- include('partials/head', { pageTitle }) %>
+<%- include('partials/navbar') %>
+<main class="container section-gap">
+  <%- include('partials/flash') %>
+  <section class="content-grid single-column-mobile">
+    <article class="panel">
+      <span class="tag">Account</span>
+      <h1>Profile</h1>
+      <div class="profile-list">
+        <div><strong>Name</strong><span><%= currentUser.name %></span></div>
+        <div><strong>Email</strong><span><%= currentUser.email %></span></div>
+      </div>
+    </article>
+
+    <article class="panel">
+      <span class="tag">Security</span>
+      <h2>Change Password</h2>
+      <form action="/profile/password" method="POST" class="stacked-form">
+        <label>Current Password</label>
+        <input type="password" name="currentPassword" required />
+        <label>New Password</label>
+        <input type="password" name="newPassword" minlength="8" required />
+        <button type="submit" class="button primary">Update Password</button>
+      </form>
+    </article>
+  </section>
+</main>
+<%- include('partials/footer') %>
