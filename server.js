@@ -13,7 +13,7 @@ require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
 const dashboardRoutes = require('./routes/dashboard');
-const const { readJson, writeJson } = require('./utils/storage');
+const { readJson, writeJson } = require('./utils/storage');
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
