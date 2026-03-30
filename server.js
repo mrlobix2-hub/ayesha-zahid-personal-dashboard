@@ -13,13 +13,13 @@ require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
 const dashboardRoutes = require('./routes/dashboard');
-const { ensureDir, readJson, writeJson } = require('./utils/storage');
+const const { readJson, writeJson } = require('./utils/storage');
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
 const isProduction = process.env.NODE_ENV === 'production';
 
-ensureDir('data');
+
 
 
 // ✅ FIXED ADMIN SYNC LOGIC (IMPORTANT)
