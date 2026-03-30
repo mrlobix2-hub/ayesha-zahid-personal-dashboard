@@ -1,9 +1,1 @@
-[
-  {
-    "id": "admin-1",
-    "name": "Ayesha Zahid",
-    "email": "test@example.com",
-    "passwordHash": "$2a$10$sadngDXYkbrD5nTszF/AvuPnD9CodlMITHV1krSsvL8lPaMgOyvpC",
-    "createdAt": "2026-03-30T10:12:12.228Z"
-  }
-]
+[]
